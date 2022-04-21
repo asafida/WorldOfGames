@@ -1,6 +1,8 @@
 import random
 import time
 import os
+from Score import add_score
+
 
 
 def generate_sequence(choose_dif):
@@ -35,6 +37,7 @@ def m_play(choose_dif):
     gen = generate_sequence(choose_dif)
     user = get_list_from_user(choose_dif)
     if equal(gen, user) == True:
+        add_score(choose_dif)
         print("You Win!")
     else:
         print("You Lose!")

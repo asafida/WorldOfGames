@@ -1,11 +1,8 @@
-import CurrencyRouletteGame
-import GuessGame
-import MemoryGame
-import requests
 import time
 from CurrencyRouletteGame import c_play
 from GuessGame import g_play
 from MemoryGame import m_play
+from Score import add_score
 
 
 def welcome(name):
@@ -20,10 +17,11 @@ def load_game(games):
     try:
         choose = int(input())
         if choose == 1:
-            print("You choose: ", games[0])
-            choose_dif = difficulty_level(1, 5)
-            time.sleep(3)
-            m_play(choose_dif)
+             print("You choose: ", games[0])
+             choose_dif = difficulty_level(1, 5)
+             time.sleep(2)
+             m_play(choose_dif)
+             #add_score(choose_dif)
         elif choose == 2:
             print("You choose: ", games[1])
             choose_dif = difficulty_level(1, 5)
